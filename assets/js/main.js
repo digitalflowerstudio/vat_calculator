@@ -27,6 +27,8 @@ function calculateVAT() {
   vatAmountOutput.textContent = "€" + vatAmount.toFixed(2);
   amountOutput.textContent = "€" + grossAmount.toFixed(2);
 
+  //Funktion zum Aktualisieren der Texte (Je nach Auswahl)
+
   const updateLabels = () => {
     AmountLabel.textContent = addVAT.checked
       ? "Gross Amount (final price)"
