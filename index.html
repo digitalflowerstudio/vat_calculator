@@ -9,7 +9,58 @@
 </head>
 
 <body>
-    <script src="./assets/js/main.js"></script>
+    <section class="vatAppWrapper">
+        <form class="vatAppForm" onsubmit="calculateVAT(); return false;">
+            <h1 class="vatAppHeading">VAT Calculator</h1>
+            <div class="choices">
+                <div class="firstChoice">
+                    <fieldset>
+                        <legend class="choiceAddSubLabel">What do you want to calculate?</legend>
+                        <div class="choiceAddWrapper">
+                            <input type="radio" name="addSubRadio" value="addVAT" id="addVAT" checked>
+                            <label for="addVAT">Add VAT (net to gross)</label>
+                        </div>
+                        <div class="choiceSubWrapper">
+                            <input type="radio" name="addSubRadio" value="subVAT" id="subVAT">
+                            <label for="subVAT">Subtract VAT (gross to net)</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="secondChoice">
+                    <fieldset>
+                        <legend class="choiceRate">VAT Rate</legend>
+                        <div class="choiceVatHighRateWrapper">
+                            <input type="radio" name="vatRateRadio" value="highVAT" id="highVAT">
+                            <label for="highVAT">19%</label>
+                        </div>
+                        <div class="choiceVatLowRateWrapper">
+                            <input type="radio" name="vatRateRadio" value="lowVAT" id="lowVAT">
+                            <label for="lowVAT">7%</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="amountInput">
+                <fieldset>
+                    <label for="netAmount" class="netAmountLabel">Net Amount in Euro</label>
+                    <input type="number" id="netAmount" value="0" required>
+                    <input type="submit" value="Calculate">
+                </fieldset>
+            </div>
+            <div class="result">
+                <h3>Result</h3>
+                <div class="VatAmountWrapper">
+                    <div class="VATamount">VAT amount</div>
+                    <p class="vatAmountOutput" id="vatAmountOutput">€</p>
+                </div>
+                <div class="AmountWrapper">
+                    <div class="AmountLabel">Gross amount (final price)</div>
+                    <p class="AmountOutput" id="AmountOutput">€</p>
+                </div>
+            </div>
+        </form>
+    </section>
+    <script src="./assets/js/main.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background: linear-gradient(45deg, #ffd700, #ffb6c1, #87ceeb, #98fb98);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s infinite alternate-reverse;
+}
+
+.vatAppWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  filter: blur(10px);
+  opacity: 0;
+  animation: fadeInAndBlur 2s ease-in-out forwards;
+}
+
+fieldset {
+  border: none;
+}
+
+.vatAppHeading {
+  text-align: center;
+  padding-bottom: 1rem;
+  color: white;
+}
+
+.firstChoice,
+.secondChoice,
+.amountInput,
+.result {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+}
+
+.choices {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.amountInput {
+  margin-top: 0.5rem;
+}
+
+.amountInput fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.result {
+  margin-top: 0.5rem;
+}
+
+.result,
+.result div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.result h3 {
+  padding-bottom: 0.5rem;
+}
+
+.AmountWrapper {
+  padding-top: 0.5rem;
+}
+
+.amountInput input[type="submit"] {
+  background-color: #b98dc0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+}
+
+.amountInput input[type="submit"]:hover {
+  background-color: #515f98;
+}
+
+.amountInput input[type="submit"]:active {
+  background-color: #3c9039;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes fadeInAndBlur {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
