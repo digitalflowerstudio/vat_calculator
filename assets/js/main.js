@@ -17,10 +17,10 @@ function calculateVAT() {
   const vatRate = highVAT.checked ? 0.19 : 0.07;
 
   // 1 bzw -1 um unten bei vatAmount mit -1 bzw 1 zu multiplizieren damit ein minus bzw + vor das ergebnis gesetzt wird und es trotzdem noch eine Number bleibt, alternativ könnte man auch einen string mit minus oder plus davor
-  const addSub = addVAT.checked ? 1 : -1;
+  const vatValue = addVAT.checked ? 1 : -1;
 
   // Wie oben erwähnt: Hier wird nochmal mit addSubRadio multipliziert damit wir ein minus oder plus Betrag sehen und am Ende auch der richtige Betrag steht!
-  const vatAmount = netAmount * vatRate * addSub; //Mehrwertsteuerbetrag ist = Netto mal MehrwertsteuerProzentsatz (Kann Negativ oder Positiv sein)
+  const vatAmount = netAmount * vatRate * vatValue; //Mehrwertsteuerbetrag ist = Netto mal MehrwertsteuerProzentsatz (Kann Negativ oder Positiv sein)
   const finalAmount = netAmount + vatAmount; //Netto + Steuern bzw. Brutto - Steuern (je nach Auswahl)
 
   // Output der Ergebnisse im HTML - auf zwei Nachkommastellen begrenzt mit toFixed
