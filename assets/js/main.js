@@ -5,8 +5,6 @@ function calculateVAT() {
   const highVAT = document.getElementById("highVAT");
   const addVAT = document.getElementById("addVAT");
   const subVAT = document.getElementById("subVAT");
-
-  // Höhe der Steuerzahlung bzw Steuersparung in EUR
   const vatAmountOutput = document.getElementById("vatAmountOutput");
 
   // Was kostet das produkt netto bzw brutto
@@ -22,7 +20,7 @@ function calculateVAT() {
   const addSub = addVAT.checked ? 1 : -1;
 
   // Wie oben erwähnt: Hier wird nochmal mit addSubRadio multipliziert damit wir ein minus oder plus Betrag sehen und am Ende auch der richtige Betrag steht!
-  const vatAmount = netAmount * vatRate * addSub; //Netto mal Mehrwertsteuer% und +/- davor
+  const vatAmount = netAmount * vatRate * addSub; //Mehrwertsteuerbetrag ist = Netto mal MehrwertsteuerProzentsatz (Kann Negativ oder Positiv sein)
   const grossAmount = netAmount + vatAmount; //Netto + Steuern bzw. Brutto - Steuern (je nach Auswahl)
 
   // Output der Ergebnisse im HTML - auf zwei Nachkommastellen begrenzt mit toFixed
