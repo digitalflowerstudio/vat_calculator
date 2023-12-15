@@ -21,11 +21,11 @@ function calculateVAT() {
 
   // Wie oben erwähnt: Hier wird nochmal mit addSubRadio multipliziert damit wir ein minus oder plus Betrag sehen und am Ende auch der richtige Betrag steht!
   const vatAmount = netAmount * vatRate * addSub; //Mehrwertsteuerbetrag ist = Netto mal MehrwertsteuerProzentsatz (Kann Negativ oder Positiv sein)
-  const grossAmount = netAmount + vatAmount; //Netto + Steuern bzw. Brutto - Steuern (je nach Auswahl)
+  const finalAmount = netAmount + vatAmount; //Netto + Steuern bzw. Brutto - Steuern (je nach Auswahl)
 
   // Output der Ergebnisse im HTML - auf zwei Nachkommastellen begrenzt mit toFixed
   vatAmountOutput.textContent = "€" + vatAmount.toFixed(2);
-  amountOutput.textContent = "€" + grossAmount.toFixed(2);
+  amountOutput.textContent = "€" + finalAmount.toFixed(2);
 
   //Funktion zum Aktualisieren der Texte (Je nach Auswahl)
 
