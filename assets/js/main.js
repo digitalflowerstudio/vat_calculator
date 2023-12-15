@@ -6,8 +6,6 @@ function calculateVAT() {
   const addVAT = document.getElementById("addVAT");
   const subVAT = document.getElementById("subVAT");
   const vatAmountOutput = document.getElementById("vatAmountOutput");
-
-  // Was kostet das produkt netto bzw brutto
   const amountOutput = document.getElementById("AmountOutput");
 
   // Konvertieren von String zu Number
