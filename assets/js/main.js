@@ -17,7 +17,7 @@ function calculateVAT() {
   // 1 bzw -1 um unten bei vatAmount mit -1 bzw 1 zu multiplizieren damit negatives bzw. positives Ergebnis herauskommen kann und dann vatAmount für den finalen Betrag mit netAmount entweder addiert ++ oder subtrahiert +- wird (Brutto oder Netto)
   const vatValue = addVAT.checked ? 1 : -1;
 
-  // Hier wird der MehrwertsteuerBetrag ermittlelt. Dieser kann Negativ oder Positiv sein (je nachdem ob vatValue true oder false ist) Der Mehrwertsteuerbetrag ist = Netto mal MehrwertsteuerProzentsatz (Kann Negativ oder Positiv sein)
+  // Hier wird der MehrwertsteuerBetrag ermittlelt. Dieser kann Negativ oder Positiv sein (je nachdem ob vatValue true oder false bzw vatAmount negativ oder positiv ist) Der Mehrwertsteuerbetrag ist = Netto mal MehrwertsteuerProzentsatz (Kann Negativ oder Positiv sein)
   const vatAmount = netAmount * vatRate * vatValue;
   //Netto + Steuern bzw. Brutto - Steuern (je nach Auswahl) um den finalen Betrag zu errechnen.
   const finalAmount = netAmount + vatAmount;
